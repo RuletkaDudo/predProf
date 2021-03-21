@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 from PyQt5 import uic
 import json
 from MainForm import Ui_MainWindow
+from requester import getPredictionForDay, getPredictionForMonth, getPredictionForYear
 
 
 month_per_day = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
@@ -29,19 +30,27 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.showGraphicButton.clicked.connect(self.show_graphic)
 
     def show_graphic(self):
-        with open(f"cities/{self.cityComboBox.currentText()}.json") as file:
-            data = json.loads(file.read())
-
-        year = 1
         month = int(self.monthComboBox.currentText())
         day = int(self.dayComboBox.currentText())
+        city = self.cityComboBox.currentText()
+
+        data_for_year = getPredictionForYear(city)
+        data_for_month = getPredictionForMonth(city, month)
+        data_for_day = getPredictionForDay(city, day)
+
+        day_in_json = month * day
+
         plt.close()
 
         if self.graphicFor.currentText() == 'год':
-            plt.plot(data[(year - 1) * 365: year * 365])
+            plt.plot(data_for_year)
         elif self.graphicFor.currentText() == 'месяц':
-            date_one = (year - 1) * 365 + sum(month_per_day[:month])
-            plt.plot(data[date_one: date_one + month_per_day[month]])
+            plt.plot(data_for_month)
+        elif self.graphicFor.currentText() == 'день':
+            self.graphicLabel.clear()
+            s = "{:10.2f}".format(data_for_day[0])
+            self.graphicLabel.setText(s)
+            return
 
         plt.ylabel('Температура')
 
