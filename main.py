@@ -27,11 +27,16 @@ class MainWindow(QMainWindow):
         self.start.clicked.connect(self.click_start)
 
     def click_start(self):
-        with open("cities/Западный.json") as file:
+        with open(f"cities/{self.city.currentText()}.json") as file:
             data = json.loads(file.read())
-        
-        plt.plot([np.median(j) for j in [data[i * 365: (i + 1) * 365] for i in range(len(data) // 365)]])
+
+        if self.graf_for.currentText() == 'год':
+            plt.plot(data[int(self.year.currentText()) * 365: (int(self.year.currentText()) + 1) * 365])
+        elif self.graf_for.currentText() == 'месяц':
+            plt.plot()
+
         plt.ylabel('Температура')
+
         plt.savefig('plot.png')
         self.label.setPixmap(QPixmap('plot.png').scaledToWidth(self.label.width()).scaledToHeight(self.label.height()))
 

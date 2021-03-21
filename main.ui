@@ -229,7 +229,7 @@
      <string>График за </string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox">
+   <widget class="QComboBox" name="graf_for">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -280,7 +280,7 @@
      <string>Start</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox_2">
+   <widget class="QComboBox" name="city">
     <property name="geometry">
      <rect>
       <x>330</x>
