@@ -30,10 +30,16 @@ class MainWindow(QMainWindow):
         with open(f"cities/{self.city.currentText()}.json") as file:
             data = json.loads(file.read())
 
+        year = int(self.year.currentText())
+        month = int(self.month.currentText())
+        day = int(self.day.currentText())
+        plt.close()
+
         if self.graf_for.currentText() == 'год':
-            plt.plot(data[int(self.year.currentText()) * 365: (int(self.year.currentText()) + 1) * 365])
+            plt.plot(data[(year - 1) * 365: year * 365])
         elif self.graf_for.currentText() == 'месяц':
-            plt.plot()
+            date_one = (year - 1) * 365 + sum(month_per_day[:month])
+            plt.plot(data[date_one: date_one + month_per_day[month]])
 
         plt.ylabel('Температура')
 
