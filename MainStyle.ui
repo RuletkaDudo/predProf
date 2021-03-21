@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>graphicWindow</class>
+ <widget class="QMainWindow" name="graphicWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>651</width>
-    <height>622</height>
+    <width>976</width>
+    <height>747</height>
    </rect>
   </property>
   <property name="font">
@@ -22,15 +22,15 @@
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>40</y>
+      <x>220</x>
+      <y>50</y>
       <width>221</width>
-      <height>31</height>
+      <height>32</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="dateOne">
      <item>
-      <widget class="QComboBox" name="day">
+      <widget class="QComboBox" name="dayComboBox">
        <item>
         <property name="text">
          <string>1</string>
@@ -39,7 +39,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="month">
+      <widget class="QComboBox" name="monthComboBox">
        <item>
         <property name="text">
          <string>1</string>
@@ -98,144 +98,19 @@
        <item>
         <property name="text">
          <string>12</string>
-        </property>
-       </item>
-      </widget>
-     </item>
-     <item>
-      <widget class="QComboBox" name="year">
-       <item>
-        <property name="text">
-         <string>1</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>2</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>3</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>4</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>5</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>6</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>7</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>8</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>9</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>10</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>11</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>12</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>13</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>14</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>15</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>16</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>17</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>18</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>19</string>
         </property>
        </item>
       </widget>
      </item>
     </layout>
    </widget>
-   <widget class="QLabel" name="date">
+   <widget class="QComboBox" name="graphicFor">
     <property name="geometry">
      <rect>
-      <x>5</x>
-      <y>43</y>
-      <width>41</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Дата:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="text">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>80</y>
-      <width>111</width>
+      <x>220</x>
+      <y>100</y>
+      <width>81</width>
       <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>График за </string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="graf_for">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>84</y>
-      <width>69</width>
-      <height>22</height>
      </rect>
     </property>
     <item>
@@ -254,39 +129,26 @@
      </property>
     </item>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QPushButton" name="showGraphicButton">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>130</y>
-      <width>641</width>
-      <height>451</height>
+      <x>310</x>
+      <y>90</y>
+      <width>131</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string/>
+     <string>Показать</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="start">
+   <widget class="QComboBox" name="cityComboBox">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>84</y>
-      <width>75</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Start</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="city">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>46</y>
-      <width>151</width>
-      <height>22</height>
+      <x>520</x>
+      <y>50</y>
+      <width>171</width>
+      <height>41</height>
      </rect>
     </property>
     <item>
@@ -358,27 +220,79 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>40</y>
-      <width>81</width>
+      <x>520</x>
+      <y>10</y>
+      <width>171</width>
       <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>Город</string>
+     <string>Выбрать город:</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QWidget" name="horizontalLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>220</x>
       <y>10</y>
-      <width>191</width>
-      <height>21</height>
+      <width>221</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>День:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>Месяц:</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>192</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>Выбрать дату:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="text">
+       <property name="text">
+        <string>Показать график за:</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>24</x>
+      <y>165</y>
+      <width>931</width>
+      <height>521</height>
      </rect>
     </property>
     <property name="text">
-     <string>День      Месяц        Год</string>
+     <string/>
     </property>
    </widget>
   </widget>
@@ -387,8 +301,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>651</width>
-     <height>27</height>
+     <width>976</width>
+     <height>26</height>
     </rect>
    </property>
   </widget>
