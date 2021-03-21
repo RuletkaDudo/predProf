@@ -14,7 +14,6 @@ month_per_day = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.secondWin = None
         uic.loadUi('main.ui', self)
 
         # Организация времени
